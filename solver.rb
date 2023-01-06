@@ -7,6 +7,6 @@ class Solver
     if input > 1
       return calculate_factorial(input)
     end
-
+    raise Exception.new "factorial must be a positive number"
   end
 end
