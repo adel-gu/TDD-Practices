@@ -1,13 +1,11 @@
 require './calculate_factorial'
 
 class Solver
-
   def factorial(input)
-    return 1 if input == 0
-    if input > 1
-      return calculate_factorial(input)
-    end
-    raise Exception.new "factorial must be a positive number"
+    return 1 if input.zero?
+    return calculate_factorial(input) if input > 1
+
+    raise Exception, 'factorial must be a positive number'
   end
 
   def reverse(string)
@@ -15,17 +13,17 @@ class Solver
   end
 
   def fizzbuzz(num)
-    if (num % 3 == 0 && num % 5 == 0)
-      return "fizzbuzz"
+    if (num % 3).zero? && (num % 5).zero?
+      'fizzbuzz'
 
-    elsif num % 3 == 0
-      return "fizz"
+    elsif (num % 3).zero?
+      'fizz'
 
-    elsif num % 5 == 0
-      return "buzz"
+    elsif (num % 5).zero?
+      'buzz'
 
     else
-      return num.to_s
+      num.to_s
     end
   end
 end
