@@ -9,4 +9,8 @@ class Solver
     end
     raise Exception.new "factorial must be a positive number"
   end
+
+  def reverse(string)
+    string.reverse
+  end
 end
