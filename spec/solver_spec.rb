@@ -23,4 +23,10 @@ describe Solver do
       expect(solver.reverse("hello")).to eq "olleh"
     end
   end
+
+  context 'Testing fizzbuzz method' do
+    it 'Given divisible number by 3 and 5, should return "fizzbuzz"' do
+      expect(solver.fizzbuzz(15)).to eq "fizzbuzz"
+    end
+  end
 end
