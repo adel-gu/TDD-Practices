@@ -3,9 +3,9 @@ require './calculate_factorial'
 class Solver
   def factorial(input)
     return 1 if input.zero?
-    return calculate_factorial(input) if input > 1
+    raise Exception, 'factorial must be a positive number' if input.negative?
 
-    raise Exception, 'factorial must be a positive number'
+    input * factorial(input - 1)
   end
 
   def reverse(string)
